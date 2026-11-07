@@ -1,59 +1,44 @@
-# Experiment 4.1 - CLI Employee Management System
+# CLI Employee Management System
 
-## Aim
-Build a command-line employee management system using Node.js with array-based storage.
+Experiment 4.1 is a small Node.js command-line application for managing employee records. It demonstrates interactive input, CRUD operations, validation, and JSON-backed persistence without requiring a database.
 
+## Features
 
+- Add, list, update, and remove employees
+- Validate interactive input
+- Persist records in `data/employees.json`
+- Keep the implementation simple enough to study and extend
 
-## Objectives Implemented
-1. Implement CRUD operations for employees.
-2. Create interactive CLI menus.
-3. Validate user input.
-4. Persist data between sessions.
-5. Handle array operations.
+## Project layout
 
-## Hardware/Software Requirements
-- Node.js 18+
-- Terminal/Command Prompt
-- No additional dependencies
-
-## Project Files
-- `index.js` - Main CLI application using `readline`
-- `data/employees.json` - Persistent JSON storage
-- `package.json` - Scripts and metadata
-
-## How to Run
-1. Open terminal in this folder.
-2. Run:
-   ```bash
-   npm start
-   ```
-
-## Available Features
-- Add employee
-- List employees
-- Update employee
-- Delete employee
-- Input validation for employee name, position, salary, and IDs
-- Automatic save to JSON file after changes
-
-## Sample Output Flow
 ```text
-Employee Management System
-1. Add Employee
-2. List Employees
-3. Update Employee
-4. Delete Employee
-5. Exit
-Select an option:
-
-Employee Name: Amogh
-Position: trainer
-Salary: 10000
-Employee added successfully!
-
-Employee List:
-ID: 1749894896010, Name: Amogh, Position: trainer, Salary: $10000
-Total employees: 1
+index.js              CLI entry point
+data/employees.json   Local employee data
+package.json          Scripts and metadata
 ```
 
+## Requirements
+
+- Node.js 18 or newer
+- A terminal with interactive standard input
+
+## Run it
+
+```bash
+npm install
+npm start
+```
+
+Check the entry point without running the application:
+
+```bash
+npm run check
+```
+
+## Design notes
+
+The project intentionally uses a local JSON file instead of a database. This keeps the experiment focused on command-line flow and data manipulation; it is not intended for concurrent or production use.
+
+## Extending the experiment
+
+Add input validation before persistence, keep file writes atomic where possible, and add tests for malformed records and duplicate employee identifiers before introducing new features.
